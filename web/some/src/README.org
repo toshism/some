@@ -1,0 +1,31 @@
+store structure
+
+#+BEGIN_SRC json
+    {
+        searchStr: 'tag:inbox',
+        threadsByFilter: {
+            'tag:new': {
+                isLoading: false,
+                lastUpdated: 1516581992139,
+                items: [{
+                    id: 'whateverid',
+                    subject: 'string subject',
+                    author: 'so and so <address@example.com>',
+                    tags: ['tag1', 'another'],
+                    date: 'somedateformat',
+                }]
+            },
+            'tag:inbox AND tag:new': {
+                isLoading: false,
+                lastUpdated: 1516581992139,
+                items: [{
+                    id: 'whateverid',
+                    subject: 'string subject',
+                    author: 'so and so <address@example.com>',
+                    tags: ['tag1', 'another'],
+                    date: 'somedateformat',
+                }]
+            }
+        },
+    }
+#+END_SRC

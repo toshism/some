@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stuff</title>
+        
+        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript">
+        async function run() {
+            let threads = await eel.threads('tag:unread')();    // Must prefix call with 'await', otherwise it's the same syntax
+            console.log(threads);
+            let count = document.getElementById('count');
+            let results = document.getElementById('results');
+            for (var thread in threads['threads']) {
+                 console.log(threads['threads'][thread]['subject']);
+            };
+            count.innerHTML = threads['total'];
+        }
+        run();
+        </script>
+    </head>
+    
+    <body>
+        <div id="count"></div>
+        <div id="results"></div>
+    </body>
+</html>
